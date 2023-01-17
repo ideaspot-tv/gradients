@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet/less" type="text/css" href="linear-gradients.less">
+    <script src="https://cdn.jsdelivr.net/npm/less" ></script>
+    <title>CSS Linear Gradients</title>
+</head>
+<body>
+<main>
+    <h1>CSS Linear Gradients</h1>
+    <div id="current"></div>
+
+    <section class="history">
+        <div style="background: linear-gradient(black, darkcyan)"><span>default</span></div>
+        <div style="background: linear-gradient(0.25turn, black, darkcyan)"><span>0.25turn</span></div>
+        <div style="background: linear-gradient(0.50turn, black, darkcyan)"><span>0.50turn</span></div>
+        <div style="background: linear-gradient(0.75turn, black, darkcyan)"><span>0.75turn</span></div>
+        <div style="background: linear-gradient(1turn, black, darkcyan)"><span>1turn</span></div>
+        <div style="background: linear-gradient(to left, black, darkcyan)"><span>to left</span></div>
+        <div style="background: linear-gradient(to right, black, darkcyan)"><span>to right</span></div>
+        <div style="background: linear-gradient(to bottom, black, darkcyan)"><span>to bottom</span></div><!--default-->
+        <div style="background: linear-gradient(to top, black, darkcyan)"><span>to top</span></div>
+        <div style="background: linear-gradient(to bottom right, black, darkcyan)"><span>to bottom right</span></div>
+        <div style="background: linear-gradient(0deg, black, darkcyan)"><span>0deg</span></div><!-- to top; clockwise rotation -->
+        <div style="background: linear-gradient(45deg, black, darkcyan)"><span>45deg</span></div>
+        <div style="background: linear-gradient(-45deg, black, darkcyan)"><span>-45deg</span></div>
+        <div style="background: linear-gradient(to right, darkcyan, brown)"><span>default positioning</span></div>
+        <div style="background: linear-gradient(to right, darkcyan, 50%, brown)"><span>positioning 50%</span></div>
+        <div style="background: linear-gradient(to right, darkcyan, 25%, brown)"><span>positioning 25%</span></div>
+        <div style="background: linear-gradient(to right, darkcyan, 75%, brown)"><span>positioning 75%</span></div>
+        <div style="background: linear-gradient(to right, black, cyan, darkcyan)"><span>more colors</span></div>
+        <div style="background: linear-gradient(to right, black, cyan 25%, darkcyan)"><span>positioning middle color (25%)</span></div>
+        <div style="background: linear-gradient(to right, black, cyan 75%, darkcyan)"><span>positioning middle color (75%)</span></div>
+        <div style="background: linear-gradient(to right, black 33%, black 33%, cyan 33%, cyan 67%, darkcyan 67%, darkcyan 100%)"><span>positioning each color</span></div>
+        <div style="background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet)"><span>rainbow</span></div>
+        <div style="background: linear-gradient(to right, red 14%, orange 14%, orange 28%, yellow 28%, yellow 42%, green 42%, green 58%, blue 58%, blue 72%, indigo 72%, indigo 86%, violet 86%)"><span>sharp stripes</span></div>
+        <div style="background:
+                        linear-gradient(0deg, #FF0000AA, #FF000000),
+                        linear-gradient(120deg, #00FF00AA, #00FF0000),
+                        linear-gradient(240deg, #0000FFAA, #0000FF00)
+        "><span>layers (deg)</span></div>
+        <div style="background:
+                        linear-gradient(to top, #FF0000AA, #FF000000),
+                        linear-gradient(to top right, #00FF00AA, #00FF0000),
+                        linear-gradient(to top left, #0000FFAA, #0000FF00)
+        "><span>layers (sides)</span></div>
+        <div style="background:
+                        linear-gradient(to bottom, mistyrose, transparent),
+                        url('https://images.pexels.com/photos/2416864/pexels-photo-2416864.jpeg?auto=compress&cs=tinysrgb&w=600');
+                    background-size: cover;
+        "><span>mist effect</span></div>
+        <div style="background: linear-gradient(to right, black, darkcyan 10px, black 20px)"><span>single stripe</span></div>
+        <div style="background: repeating-linear-gradient(to right, black, darkcyan 10px, black 20px)"><span>repeated (px)</span></div>
+        <div style="background: repeating-linear-gradient(to right, black, darkcyan 10%, black 20%)"><span>repeated (%)</span></div>
+        <div style="background: repeating-linear-gradient(to right, black, black 10%, darkcyan 10%, darkcyan 20%)"><span>repeated (sharp)</span></div>
+
+    </section>
+
+    <p class="intro">CSS <code>linear-gradient()</code> and <code>repeating-linear-gradient()</code> functions allow to compute amazing gradients without need to use external graphics software.</p>
+</main>
+</body>
+</html>

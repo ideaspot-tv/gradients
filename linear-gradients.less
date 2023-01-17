@@ -1,0 +1,70 @@
+@import "https://necolas.github.io/normalize.css/8.0.1/normalize.css";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #092927;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+main {
+  width: 100%;
+  margin: 2em auto;
+  @media (min-width: 400px) {
+    width: 80%;
+  }
+}
+
+p.intro {
+  color: white;
+  font-size: 0.9em;
+  text-align: justify;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 900;
+  font-size: 2.5em;
+}
+
+.history {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 1em;
+  row-gap: 1.5em;
+  justify-content: center;
+  width: 100%;
+
+  div {
+    width: 100px;
+    height: 100px;
+    border: 1px solid white;
+    position: relative;
+
+    span {
+      display: inline-block;
+      font-size: 0.75em;
+      font-weight: 300;
+      padding: 0.5em;
+      background-color: #00000055;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+}
+
+#current {
+  width: 300px;
+  height: 300px;
+  border: 1px solid white;
+  margin: 2em auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
