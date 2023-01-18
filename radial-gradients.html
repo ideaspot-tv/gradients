@@ -18,12 +18,12 @@
         <!--
             To create a radial gradient - simply provide two colors.
         -->
-        <div style="background: radial-gradient(black, darkcyan)"></div>
+        <div style="background: radial-gradient(black, darkcyan)"><span>basic</span></div>
 
         <!--
             The colors can names or hex values or RGB decimal values.
         -->
-        <div style="background: radial-gradient(#000000, #008B8B)"></div>
+        <div style="background: radial-gradient(#000000, #008B8B)"><span>hex</span></div>
 
         <!--
             As the first parameter, we can provide the position of the center
@@ -31,63 +31,63 @@
             include top, right, left and bottom for sides
             and a mix of those for corners.
         -->
-        <div style="background: radial-gradient(at center, black, darkcyan)"></div>
-        <div style="background: radial-gradient(at left, black, darkcyan)"></div>
-        <div style="background: radial-gradient(at right, black, darkcyan)"></div>
-        <div style="background: radial-gradient(at top, black, darkcyan)"></div>
-        <div style="background: radial-gradient(at bottom, black, darkcyan)"></div>
-        <div style="background: radial-gradient(at top left, black, darkcyan)"></div>
+        <div style="background: radial-gradient(at center, black, darkcyan)"><span>center</span></div>
+        <div style="background: radial-gradient(at left, black, darkcyan)"><span>left</span></div>
+        <div style="background: radial-gradient(at right, black, darkcyan)"><span>right</span></div>
+        <div style="background: radial-gradient(at top, black, darkcyan)"><span>top</span></div>
+        <div style="background: radial-gradient(at bottom, black, darkcyan)"><span>bottom</span></div>
+        <div style="background: radial-gradient(at top left, black, darkcyan)"><span>corner</span></div>
 
         <!--
             Next to each side name, we can provide the length, how much to move
             the center from it.
         -->
-        <div style="background: radial-gradient(at top 30px left 30px, black, darkcyan)"></div>
+        <div style="background: radial-gradient(at top 30px left 30px, black, darkcyan)"><span>transitioned</span></div>
 
         <!--
             Or we can go with percentage.
         -->
-        <div style="background: radial-gradient(at top 30% left 30%, black, darkcyan)"></div>
+        <div style="background: radial-gradient(at top 30% left 30%, black, darkcyan)"><span>percents</span></div>
 
         <!--
             We can provide more colors if needed.
         -->
-        <div style="background: radial-gradient(at center, black, cyan, darkcyan)"></div>
+        <div style="background: radial-gradient(at center, black, cyan, darkcyan)"><span>3 colors</span></div>
 
         <!--
             In the previous example, the darkcyan color is visible only on the corners.
             If the box was rectangle and not square, it would be the farthest-corner.
             We can specify the size of the gradient in pixels.
         -->
-        <div style="background: radial-gradient(30px at center, black, cyan, darkcyan)"></div>
+        <div style="background: radial-gradient(30px at center, black, cyan, darkcyan)"><span>size 30px</span></div>
 
         <!--
             Or we can use a keyword: closest-side, closest-corner,
             farthest-side, farthest-corner. Defaults to farthest-corner.
         -->
-        <div style="width: 200px; background: radial-gradient(closest-side at center, black, cyan, darkcyan)"></div>
-        <div style="width: 200px; background: radial-gradient(farthest-side at center, black, cyan, darkcyan)"></div>
-        <div style="width: 200px; background: radial-gradient(closest-corner at center, black, cyan, darkcyan)"></div>
-        <div style="width: 200px; background: radial-gradient(farthest-corner at center, black, cyan, darkcyan)"></div>
+        <div style="width: 200px; background: radial-gradient(closest-side at center, black, cyan, darkcyan)"><span>closest-side</span></div>
+        <div style="width: 200px; background: radial-gradient(farthest-side at center, black, cyan, darkcyan)"><span>farthest-side</span></div>
+        <div style="width: 200px; background: radial-gradient(closest-corner at center, black, cyan, darkcyan)"><span>closest-corner</span></div>
+        <div style="width: 200px; background: radial-gradient(farthest-corner at center, black, cyan, darkcyan)"><span>farthest-corner</span></div>
 
         <!--
             By default, the gradient has an ellipse shape,
             but we can change it to circle.
         -->
-        <div style="width: 200px; background: radial-gradient(ellipse closest-side at center, black, cyan, darkcyan)"></div>
-        <div style="width: 200px; background: radial-gradient(circle closest-side at center, black, cyan, darkcyan)"></div>
+        <div style="width: 200px; background: radial-gradient(ellipse closest-side at center, black, cyan, darkcyan)"><span>ellipse</span></div>
+        <div style="width: 200px; background: radial-gradient(circle closest-side at center, black, cyan, darkcyan)"><span>circle</span></div>
 
 
         <!--
-            We can specify the stops for each color. Here we got a kind of doughnut.
+            We can specify the stops for each color. Here we got a kind of ring.
         -->
-        <div style="background: radial-gradient(black, darkcyan 10px, black 20px)"></div>
+        <div style="background: radial-gradient(black, darkcyan 10px, black 20px)"><span>ring</span></div>
 
         <!--
             If we wanted the gradient to repeat, we can do that easily by changing
             the gradient function to repeating one.
         -->
-        <div style="background: repeating-radial-gradient(black, darkcyan 10px, black 20px)"></div>
+        <div style="background: repeating-radial-gradient(black, darkcyan 10px, black 20px)"><span>repeating rings</span></div>
 
         <!--
             Finally, let's use the background image layers feature to put three
@@ -97,29 +97,29 @@
                         radial-gradient(circle at bottom, #FF0000AA, transparent),
                         radial-gradient(circle at top left, #00FF00AA, transparent),
                         radial-gradient(circle at top right, #0000FFAA, transparent)
-        ;"></div>
+        ;"><span>layers</span></div>
 
         <!--
             As an alternative to using radial gradients, which radiate from the center point,
             you can use conic gradients. By default they start at the top, and then build your
             gradient by rotating clockwise around the center point.
         -->
-        <div style="background: conic-gradient(black, darkcyan)"></div>
-        <div style="background: conic-gradient(from 45deg, black, darkcyan)"></div>
-        <div style="background: conic-gradient(from 0.25turn, black, darkcyan)"></div>
+        <div style="background: conic-gradient(black, darkcyan)"><span>conic</span></div>
+        <div style="background: conic-gradient(from 45deg, black, darkcyan)"><span>45deg</span></div>
+        <div style="background: conic-gradient(from 0.25turn, black, darkcyan)"><span>0.25turn</span></div>
 
         <!--
             We can modify the position of the center point.
         -->
-        <div style="background: conic-gradient(from 0.25turn at 0% 0%, black, darkcyan)"></div>
-        <div style="background: conic-gradient(from 0.25turn at top left, black, darkcyan)"></div>
-        <div style="background: conic-gradient(from 0.25turn at bottom right, black, darkcyan)"></div>
+        <div style="background: conic-gradient(from 0.25turn at 0% 0%, black, darkcyan)"><span>0% 0%</span></div>
+        <div style="background: conic-gradient(from 0.25turn at top left, black, darkcyan)"><span>top left</span></div>
+        <div style="background: conic-gradient(from 0.25turn at bottom right, black, darkcyan)"><span>bottom right</span></div>
 
         <!--
             Of course if needed, we can provide more colors to our conic gradient.
         -->
-        <div style="background: conic-gradient(black, darkcyan, black)"></div>
-        <div style="background: conic-gradient(black, darkcyan, black, cyan, black)"></div>
+        <div style="background: conic-gradient(black, darkcyan, black)"><span>three colors</span></div>
+        <div style="background: conic-gradient(black, darkcyan, black, cyan, black)"><span>four colors</span></div>
 
     </section>
 
