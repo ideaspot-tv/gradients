@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet/less" type="text/css" href="svg-gradients.less">
+    <script src="https://cdn.jsdelivr.net/npm/less" ></script>
+    <title>SVG vs CSS Gradients</title>
+</head>
+<body>
+<main>
+    <h1>SVG vs CSS Gradients</h1>
+    <div id="current"></div>
+
+<!--    <div id="logo">-->
+<!--        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">&lt;!&ndash;! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. &ndash;&gt;<path fill="white" d="M50.8 452.1L19.2 477.4c-2.1 1.7-4.7 2.6-7.4 2.6C5.3 480 0 474.7 0 468.2V192C0 86 86 0 192 0S384 86 384 192V468.2c0 6.5-5.3 11.8-11.8 11.8c-2.7 0-5.3-.9-7.4-2.6l-31.6-25.3c-3.3-2.7-7.5-4.1-11.8-4.1c-5.9 0-11.5 2.8-15 7.5l-37.6 50.1c-3 4-7.8 6.4-12.8 6.4s-9.8-2.4-12.8-6.4l-38.4-51.2c-3-4-7.8-6.4-12.8-6.4s-9.8 2.4-12.8 6.4l-38.4 51.2c-3 4-7.8 6.4-12.8 6.4s-9.8-2.4-12.8-6.4L77.6 455.5c-3.6-4.7-9.1-7.5-15-7.5c-4.3 0-8.4 1.5-11.7 4.1zM160 192c0-17.7-14.3-32-32-32s-32 14.3-32 32s14.3 32 32 32s32-14.3 32-32zm96 32c17.7 0 32-14.3 32-32s-14.3-32-32-32s-32 14.3-32 32s14.3 32 32 32z"/></svg>-->
+<!--    </div>-->
+
+<!--    <style>-->
+<!--        #logo {-->
+<!--            display: grid;-->
+<!--            place-items: center;-->
+<!--            border-radius: 50%;-->
+<!--            background: linear-gradient(to top right, darkcyan, black);-->
+<!--            filter: drop-shadow(0 0 5px black);-->
+<!--        }-->
+<!--        #logo svg {-->
+<!--            height: 60%;-->
+<!--            filter: drop-shadow(0 0 5px black);-->
+<!--        }-->
+<!--    </style>-->
+
+    <article class="challenges">
+        <section>
+            <span>Default</span>
+            <div style="background: linear-gradient(black, darkcyan)"></div>
+
+            <div>
+                <svg viewBox="0 0 100 100">
+                    <defs>
+                        <linearGradient id="gradient1" style="transform: rotate(90deg)">
+                            <stop offset="0%" stop-color="black" />
+                            <stop offset="100%" stop-color="darkcyan" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="100" height="100" fill="url('#gradient1')" />
+                </svg>
+            </div>
+
+            <div>
+                <svg viewBox="0 0 100 100">
+                    <defs>
+                        <linearGradient id="gradient2" x1="0" y1="0" x2="0" y2="100%">
+                            <stop offset="0%" stop-color="black" />
+                            <stop offset="100%" stop-color="darkcyan" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="100" height="100" fill="url('#gradient2')" />
+                </svg>
+            </div>
+        </section>
+
+        <section>
+            <span>0.25turn</span>
+            <div style="background: linear-gradient(0.25turn, black, darkcyan)"></div>
+        </section>
+    </article>
+    <section class="history">
+        <!--
+            By default the gradient goes top to bottom. You can change it by setting
+            the quantity of turns. 0.25turn, 0.50turn etc.
+        -->
+        <div style="background: linear-gradient(0.25turn, black, darkcyan)"><span>0.25turn</span></div>
+        <div style="background: linear-gradient(0.50turn, black, darkcyan)"><span>0.50turn</span></div>
+        <div style="background: linear-gradient(0.75turn, black, darkcyan)"><span>0.75turn</span></div>
+        <div style="background: linear-gradient(1turn, black, darkcyan)"><span>1turn</span></div>
+
+        <!--
+            You can also specify the element sides and corners.
+        -->
+        <div style="background: linear-gradient(to left, black, darkcyan)"><span>to left</span></div>
+        <div style="background: linear-gradient(to right, black, darkcyan)"><span>to right</span></div>
+        <div style="background: linear-gradient(to bottom, black, darkcyan)"><span>to bottom</span></div><!--default-->
+        <div style="background: linear-gradient(to top, black, darkcyan)"><span>to top</span></div>
+        <div style="background: linear-gradient(to bottom right, black, darkcyan)"><span>to bottom right</span></div>
+
+        <!--
+            Alternatively, for more control, you can use degrees. 0 degrees is to top
+            and then as you increase it goes clockwise.
+        -->
+        <div style="background: linear-gradient(0deg, black, darkcyan)"><span>0deg</span></div><!-- to top; clockwise rotation -->
+        <div style="background: linear-gradient(45deg, black, darkcyan)"><span>45deg</span></div>
+        <div style="background: linear-gradient(-45deg, black, darkcyan)"><span>-45deg</span></div>
+
+        <!--
+            If we specify the gradient direction from left to right, then the first color
+            is set to be at the very left, and the second color at the very end.
+            And all between is a mix between those two colors. The mix goes proportionally
+            to distance between two colors, so in the middle, at 50% we have equal mix
+            between the left and right color.
+        -->
+        <div style="background: linear-gradient(to right, darkcyan, brown)"><span>default positioning</span></div>
+
+        <!--
+            We can provide the percentage value explicitly.
+        -->
+        <div style="background: linear-gradient(to right, darkcyan, 50%, brown)"><span>positioning 50%</span></div>
+
+        <!--
+            Or we can adjust. 25% would shift the mixing to the left, and 75% to the right.
+        -->
+        <div style="background: linear-gradient(to right, darkcyan, 25%, brown)"><span>positioning 25%</span></div>
+        <div style="background: linear-gradient(to right, darkcyan, 75%, brown)"><span>positioning 75%</span></div>
+
+        <!--
+            We can create a gradient between more than two colors.
+            Let's add cyan in between the two existing ones.
+        -->
+        <div style="background: linear-gradient(to right, black, cyan, darkcyan)"><span>more colors</span></div>
+
+        <!--
+            By default the middle color is put right in the middle, at 50%.
+            But we can adjust, so here it is at 25%. Or 75%.
+        -->
+        <div style="background: linear-gradient(to right, black, cyan 25%, darkcyan)"><span>positioning middle color (25%)</span></div>
+        <div style="background: linear-gradient(to right, black, cyan 75%, darkcyan)"><span>positioning middle color (75%)</span></div>
+
+        <!--
+            We can use this feature to control how wide each stripe is, and how
+            soft or sharp is the transition from one color to another.
+        -->
+        <div style="background: linear-gradient(to right, black 33%, black 33%, cyan 33%, cyan 67%, darkcyan 67%, darkcyan 100%)"><span>positioning each color</span></div>
+
+        <!--
+            For the last basic example, let's go max with the number of colors
+            and let's create a rainbow: red, orange, yellow, green, blue, indigo and violet.
+        -->
+        <div style="background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet)"><span>rainbow</span></div>
+
+        <!--
+            Finally, to make the stripes sharp, we will divide the 100% eqaully,
+            that is around 14% for each.
+        -->
+        <div style="background: linear-gradient(to right, red 14%, orange 14%, orange 28%, yellow 28%, yellow 42%, green 42%, green 58%, blue 58%, blue 72%, indigo 72%, indigo 86%, violet 86%)"><span>sharp stripes</span></div>
+
+
+        <!--
+            We can also create a gradient from a color to a transparency.
+        -->
+        <div style="background: linear-gradient(0deg, red, transparent);"><span>transparency</span></div>
+
+        <!--
+            Or we can use hexadecimal values for even more ALPHA channel control.
+        -->
+        <div style="background: linear-gradient(0deg, #FF0000AA, #FF000000);"><span>transparency</span></div>
+
+        <!--
+            Finally, we can use the CSS3 background layers feature to overlay
+            one gradient over the other. Here I will set three gradients - red, green and blue.
+            The red will start at 0degrees, the green at 120 degrees and blue at 240 degrees.
+        -->
+        <div style="background:
+                        linear-gradient(0deg, #FF0000AA, #FF000000),
+                        linear-gradient(120deg, #00FF00AA, #00FF0000),
+                        linear-gradient(240deg, #0000FFAA, #0000FF00)
+        "><span>layers (deg)</span></div>
+
+        <!--
+            With these particular degree values, we can achieve similar effect by using
+            sides and corners instead of numbers.
+        -->
+        <div style="background:
+                        linear-gradient(to top, #FF0000AA, #FF000000),
+                        linear-gradient(to top right, #00FF00AA, #00FF0000),
+                        linear-gradient(to top left, #0000FFAA, #00FF0000)
+        "><span>layers (sides)</span></div>
+
+        <!--
+            And finally something really amazing. We can use put a gradient layer
+            on top of an existing image background. Here let's add a mist over this
+            mountainy photoshoot.
+        -->
+        <div style="background:
+                        linear-gradient(to bottom, mistyrose, transparent),
+                        url('https://images.pexels.com/photos/2416864/pexels-photo-2416864.jpeg?auto=compress&cs=tinysrgb&w=600');
+                    background-size: cover;
+        "><span>mist effect</span></div>
+
+        <!--
+            Let's use the gradient to create a single 2-color stripe at the left of our div.
+        -->
+        <div style="background: linear-gradient(to right, black, darkcyan 10px, black 20px)"><span>single stripe</span></div>
+
+        <!--
+            That created a single stripe. If we now wanted this stripe to be repeated,
+            to create a kind of a texture, we can use the repeating-linear-gradient function.
+        -->
+        <div style="background: repeating-linear-gradient(to right, black, darkcyan 10px, black 20px)"><span>repeated (px)</span></div>
+
+        <!--
+            Instead of pixels we can use percents.
+        -->
+        <div style="background: repeating-linear-gradient(to right, black, darkcyan 10%, black 20%)"><span>repeated (%)</span></div>
+
+        <!--
+            And finally, we can provide the exact values of color stops, in order to
+            make the strips sharp.
+        -->
+        <div style="background: repeating-linear-gradient(to right, black, black 10%, darkcyan 10%, darkcyan 20%)"><span>repeated (sharp)</span></div>
+
+    </section>
+
+    <p class="intro">CSS <code>linear-gradient()</code> and <code>repeating-linear-gradient()</code> functions allow to compute amazing gradients without need to use external graphics software.</p>
+</main>
+</body>
+</html>
