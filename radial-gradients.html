@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet/less" type="text/css" href="css-gradients.less">
+    <script src="https://cdn.jsdelivr.net/npm/less" ></script>
+    <title>CSS Radial and Conic Gradients</title>
+</head>
+<body>
+<main>
+    <h1>CSS Radial and Conic Gradients</h1>
+    <div id="current"></div>
+
+    <section class="history">
+        <!--
+            To create a radial gradient - simply provide two colors.
+        -->
+        <div style="background: radial-gradient(black, darkcyan)"></div>
+
+        <!--
+            The colors can names or hex values or RGB decimal values.
+        -->
+        <div style="background: radial-gradient(#000000, #008B8B)"></div>
+
+        <!--
+            As the first parameter, we can provide the position of the center
+            of the gradient. By default it is center. Other possibilities
+            include top, right, left and bottom for sides
+            and a mix of those for corners.
+        -->
+        <div style="background: radial-gradient(at center, black, darkcyan)"></div>
+        <div style="background: radial-gradient(at left, black, darkcyan)"></div>
+        <div style="background: radial-gradient(at right, black, darkcyan)"></div>
+        <div style="background: radial-gradient(at top, black, darkcyan)"></div>
+        <div style="background: radial-gradient(at bottom, black, darkcyan)"></div>
+        <div style="background: radial-gradient(at top left, black, darkcyan)"></div>
+
+        <!--
+            Next to each side name, we can provide the length, how much to move
+            the center from it.
+        -->
+        <div style="background: radial-gradient(at top 30px left 30px, black, darkcyan)"></div>
+
+        <!--
+            Or we can go with percentage.
+        -->
+        <div style="background: radial-gradient(at top 30% left 30%, black, darkcyan)"></div>
+
+        <!--
+            We can provide more colors if needed.
+        -->
+        <div style="background: radial-gradient(at center, black, cyan, darkcyan)"></div>
+
+        <!--
+            In the previous example, the darkcyan color is visible only on the corners.
+            If the box was rectangle and not square, it would be the farthest-corner.
+            We can specify the size of the gradient in pixels.
+        -->
+        <div style="background: radial-gradient(30px at center, black, cyan, darkcyan)"></div>
+
+        <!--
+            Or we can use a keyword: closest-side, closest-corner,
+            farthest-side, farthest-corner. Defaults to farthest-corner.
+        -->
+        <div style="width: 200px; background: radial-gradient(closest-side at center, black, cyan, darkcyan)"></div>
+        <div style="width: 200px; background: radial-gradient(farthest-side at center, black, cyan, darkcyan)"></div>
+        <div style="width: 200px; background: radial-gradient(closest-corner at center, black, cyan, darkcyan)"></div>
+        <div style="width: 200px; background: radial-gradient(farthest-corner at center, black, cyan, darkcyan)"></div>
+
+        <!--
+            By default, the gradient has an ellipse shape,
+            but we can change it to circle.
+        -->
+        <div style="width: 200px; background: radial-gradient(ellipse closest-side at center, black, cyan, darkcyan)"></div>
+        <div style="width: 200px; background: radial-gradient(circle closest-side at center, black, cyan, darkcyan)"></div>
+
+
+        <!--
+            We can specify the stops for each color. Here we got a kind of doughnut.
+        -->
+        <div style="background: radial-gradient(black, darkcyan 10px, black 20px)"></div>
+
+        <!--
+            If we wanted the gradient to repeat, we can do that easily by changing
+            the gradient function to repeating one.
+        -->
+        <div style="background: repeating-radial-gradient(black, darkcyan 10px, black 20px)"></div>
+
+        <!--
+            Finally, let's use the background image layers feature to put three
+            partially transparent radial gradients on top of each other.
+        -->
+        <div style="background:
+                        radial-gradient(circle at bottom, #FF0000AA, transparent),
+                        radial-gradient(circle at top left, #00FF00AA, transparent),
+                        radial-gradient(circle at top right, #0000FFAA, transparent)
+        ;"></div>
+
+        <!--
+            As an alternative to using radial gradients, which radiate from the center point,
+            you can use conic gradients. By default they start at the top, and then build your
+            gradient by rotating clockwise around the center point.
+        -->
+        <div style="background: conic-gradient(black, darkcyan)"></div>
+        <div style="background: conic-gradient(from 45deg, black, darkcyan)"></div>
+        <div style="background: conic-gradient(from 0.25turn, black, darkcyan)"></div>
+
+        <!--
+            We can modify the position of the center point.
+        -->
+        <div style="background: conic-gradient(from 0.25turn at 0% 0%, black, darkcyan)"></div>
+        <div style="background: conic-gradient(from 0.25turn at top left, black, darkcyan)"></div>
+        <div style="background: conic-gradient(from 0.25turn at bottom right, black, darkcyan)"></div>
+
+        <!--
+            Of course if needed, we can provide more colors to our conic gradient.
+        -->
+        <div style="background: conic-gradient(black, darkcyan, black)"></div>
+        <div style="background: conic-gradient(black, darkcyan, black, cyan, black)"></div>
+
+    </section>
+
+    <p class="intro">CSS <code>radial-gradient()</code> and <code>repeating-radial-gradient()</code> functions allow to compute amazing radial gradients without need to use external graphics software. A conic gradient created with <code>conic-gradient()</code> function is also an interesting alternative.</p>
+</main>
+</body>
+</html>
