@@ -12,207 +12,411 @@
 <body>
 <main>
     <h1>SVG vs CSS Gradients</h1>
-    <div id="current"></div>
-
-<!--    <div id="logo">-->
-<!--        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">&lt;!&ndash;! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. &ndash;&gt;<path fill="white" d="M50.8 452.1L19.2 477.4c-2.1 1.7-4.7 2.6-7.4 2.6C5.3 480 0 474.7 0 468.2V192C0 86 86 0 192 0S384 86 384 192V468.2c0 6.5-5.3 11.8-11.8 11.8c-2.7 0-5.3-.9-7.4-2.6l-31.6-25.3c-3.3-2.7-7.5-4.1-11.8-4.1c-5.9 0-11.5 2.8-15 7.5l-37.6 50.1c-3 4-7.8 6.4-12.8 6.4s-9.8-2.4-12.8-6.4l-38.4-51.2c-3-4-7.8-6.4-12.8-6.4s-9.8 2.4-12.8 6.4l-38.4 51.2c-3 4-7.8 6.4-12.8 6.4s-9.8-2.4-12.8-6.4L77.6 455.5c-3.6-4.7-9.1-7.5-15-7.5c-4.3 0-8.4 1.5-11.7 4.1zM160 192c0-17.7-14.3-32-32-32s-32 14.3-32 32s14.3 32 32 32s32-14.3 32-32zm96 32c17.7 0 32-14.3 32-32s-14.3-32-32-32s-32 14.3-32 32s14.3 32 32 32z"/></svg>-->
-<!--    </div>-->
-
-<!--    <style>-->
-<!--        #logo {-->
-<!--            display: grid;-->
-<!--            place-items: center;-->
-<!--            border-radius: 50%;-->
-<!--            background: linear-gradient(to top right, darkcyan, black);-->
-<!--            filter: drop-shadow(0 0 5px black);-->
-<!--        }-->
-<!--        #logo svg {-->
-<!--            height: 60%;-->
-<!--            filter: drop-shadow(0 0 5px black);-->
-<!--        }-->
-<!--    </style>-->
 
     <article class="challenges">
         <section>
             <span>Default</span>
-            <div style="background: linear-gradient(black, darkcyan)"></div>
+            <div class="css" style="background: linear-gradient(black, darkcyan)"></div>
 
-            <div>
+            <div class="svg">
                 <svg viewBox="0 0 100 100">
                     <defs>
-                        <linearGradient id="gradient1" style="transform: rotate(90deg)">
+                        <linearGradient id="gradientDefault">
                             <stop offset="0%" stop-color="black" />
                             <stop offset="100%" stop-color="darkcyan" />
                         </linearGradient>
                     </defs>
-                    <rect width="100" height="100" fill="url('#gradient1')" />
-                </svg>
-            </div>
-
-            <div>
-                <svg viewBox="0 0 100 100">
-                    <defs>
-                        <linearGradient id="gradient2" x1="0" y1="0" x2="0" y2="100%">
-                            <stop offset="0%" stop-color="black" />
-                            <stop offset="100%" stop-color="darkcyan" />
-                        </linearGradient>
-                    </defs>
-                    <rect width="100" height="100" fill="url('#gradient2')" />
+                    <rect width="100" height="100" fill="url('#gradientDefault')" />
                 </svg>
             </div>
         </section>
 
         <section>
-            <span>0.25turn</span>
-            <div style="background: linear-gradient(0.25turn, black, darkcyan)"></div>
+            <span>Gradient Direction</span>
+            <div class="css" style="background: linear-gradient(0.25turn, black, darkcyan)"></div>
+            <div class="css" style="background: linear-gradient(to bottom right, black, darkcyan)"></div>
+            <div class="css" style="background: linear-gradient(45deg, black, darkcyan)"></div>
+
+            <div class="svg">
+                <!-- x1 y1 x2 y2 -->
+                <svg viewBox="0 0 100 100">
+                    <defs>
+                        <linearGradient id="gradientXY" x1="0" y1="0" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="black" />
+                            <stop offset="100%" stop-color="darkcyan" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="100" height="100" fill="url('#gradientXY')" />
+                </svg>
+            </div>
+            <div class="svg">
+                <!-- rotate -->
+                <svg viewBox="0 0 100 100">
+                    <defs>
+                        <linearGradient id="gradientRotate" style="transform: rotate(45deg);">
+                            <stop offset="0%" stop-color="black" />
+                            <stop offset="100%" stop-color="darkcyan" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="100" height="100" fill="url('#gradientRotate')" />
+                </svg>
+            </div>
         </section>
-    </article>
-    <section class="history">
-        <!--
-            By default the gradient goes top to bottom. You can change it by setting
-            the quantity of turns. 0.25turn, 0.50turn etc.
-        -->
-        <div style="background: linear-gradient(0.25turn, black, darkcyan)"><span>0.25turn</span></div>
-        <div style="background: linear-gradient(0.50turn, black, darkcyan)"><span>0.50turn</span></div>
-        <div style="background: linear-gradient(0.75turn, black, darkcyan)"><span>0.75turn</span></div>
-        <div style="background: linear-gradient(1turn, black, darkcyan)"><span>1turn</span></div>
 
-        <!--
-            You can also specify the element sides and corners.
-        -->
-        <div style="background: linear-gradient(to left, black, darkcyan)"><span>to left</span></div>
-        <div style="background: linear-gradient(to right, black, darkcyan)"><span>to right</span></div>
-        <div style="background: linear-gradient(to bottom, black, darkcyan)"><span>to bottom</span></div><!--default-->
-        <div style="background: linear-gradient(to top, black, darkcyan)"><span>to top</span></div>
-        <div style="background: linear-gradient(to bottom right, black, darkcyan)"><span>to bottom right</span></div>
+        <section>
+            <span>Gradient Hint / Midpoint Positioning</span>
+            <div class="css" style="background: linear-gradient(to right, darkcyan, 25%, brown)"></div>
 
-        <!--
-            Alternatively, for more control, you can use degrees. 0 degrees is to top
-            and then as you increase it goes clockwise.
-        -->
-        <div style="background: linear-gradient(0deg, black, darkcyan)"><span>0deg</span></div><!-- to top; clockwise rotation -->
-        <div style="background: linear-gradient(45deg, black, darkcyan)"><span>45deg</span></div>
-        <div style="background: linear-gradient(-45deg, black, darkcyan)"><span>-45deg</span></div>
+            <div class="svg">
+                <svg viewBox="0 0 100 100">
+                    <defs>
+                        <linearGradient id="gradientMidpoint">
+                            <stop offset="0%" stop-color="darkcyan" />
+                            <!-- two stops need to be added - graphic tool needed -->
+                            <stop offset="0.2" stop-color="#416565"/>
+                            <stop offset="0.42" stop-color="#853D3D"/>
 
-        <!--
-            If we specify the gradient direction from left to right, then the first color
-            is set to be at the very left, and the second color at the very end.
-            And all between is a mix between those two colors. The mix goes proportionally
-            to distance between two colors, so in the middle, at 50% we have equal mix
-            between the left and right color.
-        -->
-        <div style="background: linear-gradient(to right, darkcyan, brown)"><span>default positioning</span></div>
+                            <stop offset="100%" stop-color="brown" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="100" height="100" fill="url('#gradientMidpoint')" />
+                </svg>
+            </div>
+        </section>
 
-        <!--
-            We can provide the percentage value explicitly.
-        -->
-        <div style="background: linear-gradient(to right, darkcyan, 50%, brown)"><span>positioning 50%</span></div>
+        <section>
+            <span>Three Colors</span>
+            <div class="css" style="background: linear-gradient(to right, black, cyan, darkcyan)"></div>
 
-        <!--
-            Or we can adjust. 25% would shift the mixing to the left, and 75% to the right.
-        -->
-        <div style="background: linear-gradient(to right, darkcyan, 25%, brown)"><span>positioning 25%</span></div>
-        <div style="background: linear-gradient(to right, darkcyan, 75%, brown)"><span>positioning 75%</span></div>
+            <div class="svg">
+                <svg viewBox="0 0 100 100">
+                    <defs>
+                        <linearGradient id="gradientThreeColors">
+                            <stop offset="0%" stop-color="black" />
+                            <stop offset="50%" stop-color="cyan" />
+                            <stop offset="100%" stop-color="darkcyan" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="100" height="100" fill="url('#gradientThreeColors')" />
+                </svg>
+            </div>
+        </section>
 
-        <!--
-            We can create a gradient between more than two colors.
-            Let's add cyan in between the two existing ones.
-        -->
-        <div style="background: linear-gradient(to right, black, cyan, darkcyan)"><span>more colors</span></div>
+        <section>
+            <span>Positioning Middle Color</span>
+            <div class="css" style="background: linear-gradient(to right, black, cyan 25%, darkcyan)"></div>
 
-        <!--
-            By default the middle color is put right in the middle, at 50%.
-            But we can adjust, so here it is at 25%. Or 75%.
-        -->
-        <div style="background: linear-gradient(to right, black, cyan 25%, darkcyan)"><span>positioning middle color (25%)</span></div>
-        <div style="background: linear-gradient(to right, black, cyan 75%, darkcyan)"><span>positioning middle color (75%)</span></div>
+            <div class="svg">
+                <svg viewBox="0 0 100 100">
+                    <defs>
+                        <linearGradient id="gradientPositionMiddle">
+                            <stop offset="0%" stop-color="black" />
+                            <stop offset="25%" stop-color="cyan" />
+                            <stop offset="100%" stop-color="darkcyan" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="100" height="100" fill="url('#gradientPositionMiddle')" />
+                </svg>
+            </div>
+        </section>
 
-        <!--
-            We can use this feature to control how wide each stripe is, and how
-            soft or sharp is the transition from one color to another.
-        -->
-        <div style="background: linear-gradient(to right, black 33%, black 33%, cyan 33%, cyan 67%, darkcyan 67%, darkcyan 100%)"><span>positioning each color</span></div>
+        <section>
+            <span>Rainbow</span>
+            <div class="css" style="background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet)"></div>
 
-        <!--
-            For the last basic example, let's go max with the number of colors
-            and let's create a rainbow: red, orange, yellow, green, blue, indigo and violet.
-        -->
-        <div style="background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet)"><span>rainbow</span></div>
+            <div class="svg">
+                <svg viewBox="0 0 100 100">
+                    <defs>
+                        <linearGradient id="gradientRainbow">
+                            <stop offset="0%" stop-color="red" />
+                            <stop offset="16%" stop-color="orange" />
+                            <stop offset="33%" stop-color="yellow" />
+                            <stop offset="50%" stop-color="green" />
+                            <stop offset="67%" stop-color="blue" />
+                            <stop offset="83%" stop-color="indigo" />
+                            <stop offset="100%" stop-color="violet" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="100" height="100" fill="url('#gradientRainbow')" />
+                </svg>
+            </div>
+        </section>
 
-        <!--
-            Finally, to make the stripes sharp, we will divide the 100% eqaully,
-            that is around 14% for each.
-        -->
-        <div style="background: linear-gradient(to right, red 14%, orange 14%, orange 28%, yellow 28%, yellow 42%, green 42%, green 58%, blue 58%, blue 72%, indigo 72%, indigo 86%, violet 86%)"><span>sharp stripes</span></div>
+        <section>
+            <span>Sharp Stripes</span>
+            <div class="css" style="background: linear-gradient(to right, red 14%, orange 14%, orange 28%, yellow 28%, yellow 42%, green 42%, green 58%, blue 58%, blue 72%, indigo 72%, indigo 86%, violet 86%)"></div>
 
+            <div class="svg">
+                <svg viewBox="0 0 100 100">
+                    <defs>
+                        <linearGradient id="gradientRainbowStripes">
+                            <stop offset="14%" stop-color="red" />
+                            <stop offset="14%" stop-color="orange" />
+                            <stop offset="28%" stop-color="orange" />
+                            <stop offset="28%" stop-color="yellow" />
+                            <stop offset="42%" stop-color="yellow" />
+                            <stop offset="42%" stop-color="green" />
+                            <stop offset="58%" stop-color="green" />
+                            <stop offset="58%" stop-color="blue" />
+                            <stop offset="72%" stop-color="blue" />
+                            <stop offset="72%" stop-color="indigo" />
+                            <stop offset="86%" stop-color="indigo" />
+                            <stop offset="86%" stop-color="violet" />
+                            <stop offset="100%" stop-color="violet" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="100" height="100" fill="url('#gradientRainbowStripes')" />
+                </svg>
+            </div>
+        </section>
 
-        <!--
-            We can also create a gradient from a color to a transparency.
-        -->
-        <div style="background: linear-gradient(0deg, red, transparent);"><span>transparency</span></div>
+        <section>
+            <span>Transparency</span>
+            <div class="css" style="background: linear-gradient(to right, red, transparent)"></div>
 
-        <!--
-            Or we can use hexadecimal values for even more ALPHA channel control.
-        -->
-        <div style="background: linear-gradient(0deg, #FF0000AA, #FF000000);"><span>transparency</span></div>
+            <div class="svg">
+                <svg viewBox="0 0 100 100">
+                    <defs>
+                        <linearGradient id="gradientTransparent">
+                            <stop offset="0%" stop-color="red" />
+                            <stop offset="100%" stop-color="transparent" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="100" height="100" fill="url('#gradientTransparent')" />
+                </svg>
+            </div>
+        </section>
 
-        <!--
-            Finally, we can use the CSS3 background layers feature to overlay
-            one gradient over the other. Here I will set three gradients - red, green and blue.
-            The red will start at 0degrees, the green at 120 degrees and blue at 240 degrees.
-        -->
-        <div style="background:
-                        linear-gradient(0deg, #FF0000AA, #FF000000),
-                        linear-gradient(120deg, #00FF00AA, #00FF0000),
-                        linear-gradient(240deg, #0000FFAA, #0000FF00)
-        "><span>layers (deg)</span></div>
-
-        <!--
-            With these particular degree values, we can achieve similar effect by using
-            sides and corners instead of numbers.
-        -->
-        <div style="background:
+        <section>
+            <span>Layers</span>
+            <div class="css" style="background:
                         linear-gradient(to top, #FF0000AA, #FF000000),
-                        linear-gradient(to top right, #00FF00AA, #00FF0000),
-                        linear-gradient(to top left, #0000FFAA, #00FF0000)
-        "><span>layers (sides)</span></div>
+                        linear-gradient(to bottom right, #00FF00AA, #00FF0000),
+                        linear-gradient(to bottom left, #0000FFAA, #0000FF00)"></div>
 
-        <!--
-            And finally something really amazing. We can use put a gradient layer
-            on top of an existing image background. Here let's add a mist over this
-            mountainy photoshoot.
-        -->
-        <div style="background:
+            <div class="svg">
+                <svg viewBox="0 0 100 100">
+                    <defs>
+                        <linearGradient id="gradientLayersRed" x1="0" y1="100%" x2="0" y2="0">
+                            <stop offset="0%" stop-color="red" stop-opacity="67%" />
+                            <stop offset="100%" stop-color="red" stop-opacity="0%"/>
+                        </linearGradient>
+                        <linearGradient id="gradientLayersGreen" x1="0" y1="0" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="green" stop-opacity="67%" />
+                            <stop offset="100%" stop-color="green" stop-opacity="0%"/>
+                        </linearGradient>
+                        <linearGradient id="gradientLayersBlue" x1="100%" y1="0" x2="0" y2="100%">
+                            <stop offset="0%" stop-color="blue" stop-opacity="67%" />
+                            <stop offset="100%" stop-color="blue" stop-opacity="0%"/>
+                        </linearGradient>
+                    </defs>
+                    <rect width="100" height="100" fill="url('#gradientLayersRed')" />
+                    <rect width="100" height="100" fill="url('#gradientLayersGreen')" />
+                    <rect width="100" height="100" fill="url('#gradientLayersBlue')" />
+                </svg>
+            </div>
+        </section>
+
+        <section>
+            <span>Mist Effect</span>
+            <div class="css" style="background:
                         linear-gradient(to bottom, mistyrose, transparent),
                         url('https://images.pexels.com/photos/2416864/pexels-photo-2416864.jpeg?auto=compress&cs=tinysrgb&w=600');
-                    background-size: cover;
-        "><span>mist effect</span></div>
+                        background-size: cover;
+            "></div>
 
-        <!--
-            Let's use the gradient to create a single 2-color stripe at the left of our div.
-        -->
-        <div style="background: linear-gradient(to right, black, darkcyan 10px, black 20px)"><span>single stripe</span></div>
+            <div class="svg">
+                <svg viewBox="0 0 100 100">
+                    <defs>
+                        <linearGradient id="gradientMist" x1="0" y1="0" x2="0" y2="100%">
+                            <stop offset="0%" stop-color="mistyrose" stop-opacity="100%" />
+                            <stop offset="100%" stop-color="mistyrose" stop-opacity="0%"/>
+                        </linearGradient>
+                    </defs>
+                    <image href="https://images.pexels.com/photos/2416864/pexels-photo-2416864.jpeg?auto=compress&cs=tinysrgb&w=600" height="100" width="100" />
+                    <rect width="100" height="100" fill="url('#gradientMist')" />
+                </svg>
+            </div>
+        </section>
 
-        <!--
-            That created a single stripe. If we now wanted this stripe to be repeated,
-            to create a kind of a texture, we can use the repeating-linear-gradient function.
-        -->
-        <div style="background: repeating-linear-gradient(to right, black, darkcyan 10px, black 20px)"><span>repeated (px)</span></div>
+        <section>
+            <span>Repeated Gradient</span>
+            <div class="css" style="background: repeating-linear-gradient(to right, black, darkcyan 10%, black 20%)"></div>
 
-        <!--
-            Instead of pixels we can use percents.
-        -->
-        <div style="background: repeating-linear-gradient(to right, black, darkcyan 10%, black 20%)"><span>repeated (%)</span></div>
+            <div class="svg">
+                <svg viewBox="0 0 100 100">
+                    <defs>
+                        <linearGradient id="gradientRepeated" x1="0" y1="0" x2="20%" y2="0" spreadMethod="repeat">
+                            <stop offset="0%" stop-color="black" />
+                            <stop offset="50%" stop-color="darkcyan" />
+                            <stop offset="100%" stop-color="black" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="100" height="100" fill="url('#gradientRepeated')" />
+                </svg>
+            </div>
+        </section>
 
-        <!--
-            And finally, we can provide the exact values of color stops, in order to
-            make the strips sharp.
-        -->
-        <div style="background: repeating-linear-gradient(to right, black, black 10%, darkcyan 10%, darkcyan 20%)"><span>repeated (sharp)</span></div>
+        <section>
+            <span>Radial Gradient</span>
+            <div class="css" style="background: radial-gradient(black, darkcyan)"></div>
 
-    </section>
+            <div class="svg">
+                <svg viewBox="0 0 100 100">
+                    <defs>
+                        <radialGradient id="radialGradient" r="60%">
+                            <stop offset="0%" stop-color="black" />
+                            <stop offset="100%" stop-color="darkcyan" />
+                        </radialGradient>
+                    </defs>
+                    <rect width="100" height="100" fill="url('#radialGradient')" />
+                </svg>
+            </div>
+        </section>
 
-    <p class="intro">CSS <code>linear-gradient()</code> and <code>repeating-linear-gradient()</code> functions allow to compute amazing gradients without need to use external graphics software.</p>
+        <section>
+            <span>Positioning Radial Gradient</span>
+            <div class="css" style="background: radial-gradient(at top left, black, darkcyan)"></div>
+
+            <div class="svg">
+                <svg viewBox="0 0 100 100">
+                    <defs>
+                        <radialGradient id="radialGradientPos" r="130%" cx="0" cy="0">
+                            <stop offset="0%" stop-color="black" />
+                            <stop offset="100%" stop-color="darkcyan" />
+                        </radialGradient>
+                    </defs>
+                    <rect width="100" height="100" fill="url('#radialGradientPos')" />
+                </svg>
+            </div>
+        </section>
+
+        <section>
+            <span>Three Colors</span>
+            <div class="css" style="background: radial-gradient(at center, black, cyan, darkcyan)"></div>
+
+            <div class="svg">
+                <svg viewBox="0 0 100 100">
+                    <defs>
+                        <radialGradient id="radialGradientThreeColors" r="60%">
+                            <stop offset="0%" stop-color="black" />
+                            <stop offset="50%" stop-color="cyan" />
+                            <stop offset="100%" stop-color="darkcyan" />
+                        </radialGradient>
+                    </defs>
+                    <rect width="100" height="100" fill="url('#radialGradientThreeColors')" />
+                </svg>
+            </div>
+        </section>
+
+        <section>
+            <span>Ring</span>
+            <div class="css" style="background: radial-gradient(black, darkcyan 10px, black 20px)"></div>
+
+            <div class="svg">
+                <svg viewBox="0 0 100 100">
+                    <defs>
+                        <radialGradient id="radialRing" r="10%">
+                            <stop offset="0%" stop-color="black" />
+                            <stop offset="50%" stop-color="darkcyan" />
+                            <stop offset="100%" stop-color="black" />
+                        </radialGradient>
+                    </defs>
+                    <rect width="100" height="100" fill="url('#radialRing')" />
+                </svg>
+            </div>
+        </section>
+
+        <section>
+            <span>Repeating Rings</span>
+            <div class="css" style="background: radial-gradient(black, darkcyan 10px, black 20px)"></div>
+
+            <div class="svg">
+                <svg viewBox="0 0 100 100">
+                    <defs>
+                        <radialGradient id="radialRing" r="10%" spreadMethod="repeat">
+                            <stop offset="0%" stop-color="black" />
+                            <stop offset="50%" stop-color="darkcyan" />
+                            <stop offset="100%" stop-color="black" />
+                        </radialGradient>
+                    </defs>
+                    <rect width="100" height="100" fill="url('#radialRing')" />
+                </svg>
+            </div>
+        </section>
+
+        <section>
+            <span>Layers</span>
+            <div class="css" style="background:
+                        radial-gradient(circle at bottom, #FF0000AA, transparent),
+                        radial-gradient(circle at top left, #00FF00AA, transparent),
+                        radial-gradient(circle at top right, #0000FFAA, transparent)"></div>
+
+            <div class="svg">
+                <svg viewBox="0 0 100 100">
+                    <defs>
+                        <radialGradient id="radialLayerRed" cx="50%" cy="100%" r="100%">
+                            <stop offset="0%" stop-color="red" />
+                            <stop offset="100%" stop-color="red" stop-opacity="0" />
+                        </radialGradient>
+                        <radialGradient id="radialLayerGreen" cx="0" cy="0" r="100%">
+                            <stop offset="0%" stop-color="green" />
+                            <stop offset="100%" stop-color="green" stop-opacity="0" />
+                        </radialGradient>
+                        <radialGradient id="radialLayerBlue" cx="100%" cy="0" r="100%">
+                            <stop offset="0%" stop-color="blue" />
+                            <stop offset="100%" stop-color="blue" stop-opacity="0" />
+                        </radialGradient>
+                    </defs>
+                    <rect width="100" height="100" fill="url('#radialLayerRed')" />
+                    <rect width="100" height="100" fill="url('#radialLayerGreen')" />
+                    <rect width="100" height="100" fill="url('#radialLayerBlue')" />
+                </svg>
+            </div>
+        </section>
+
+        <section>
+            <span>Logo</span>
+            <div class="css">
+                <div id="csslogo">
+                    <svg id="fa-ghost" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path fill="white" d="M50.8 452.1L19.2 477.4c-2.1 1.7-4.7 2.6-7.4 2.6C5.3 480 0 474.7 0 468.2V192C0 86 86 0 192 0S384 86 384 192V468.2c0 6.5-5.3 11.8-11.8 11.8c-2.7 0-5.3-.9-7.4-2.6l-31.6-25.3c-3.3-2.7-7.5-4.1-11.8-4.1c-5.9 0-11.5 2.8-15 7.5l-37.6 50.1c-3 4-7.8 6.4-12.8 6.4s-9.8-2.4-12.8-6.4l-38.4-51.2c-3-4-7.8-6.4-12.8-6.4s-9.8 2.4-12.8 6.4l-38.4 51.2c-3 4-7.8 6.4-12.8 6.4s-9.8-2.4-12.8-6.4L77.6 455.5c-3.6-4.7-9.1-7.5-15-7.5c-4.3 0-8.4 1.5-11.7 4.1zM160 192c0-17.7-14.3-32-32-32s-32 14.3-32 32s14.3 32 32 32s32-14.3 32-32zm96 32c17.7 0 32-14.3 32-32s-14.3-32-32-32s-32 14.3-32 32s14.3 32 32 32z"/></svg>
+                </div>
+                <style>
+                    #csslogo {
+                        display: grid;
+                        place-items: center;
+                        border-radius: 50%;
+                        background: linear-gradient(to top right, darkcyan, black);
+                        width: 80%;
+                        height: 80%;
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        border-width: 0;
+                    }
+                    #csslogo svg {
+                        height: 60%;
+                    }
+                </style>
+            </div>
+
+            <div class="svg">
+                <svg viewBox="0 0 100 100" id="svglogo">
+                    <defs>
+                        <radialGradient id="logoGradient" cx="0%" cy="100%" r="130%">
+                            <stop offset="0%" stop-color="darkcyan" />
+                            <stop offset="100%" stop-color="black" />
+                        </radialGradient>
+                    </defs>
+                    <circle r="40" cx="50" cy="50" fill="url('#logoGradient')" />
+                    <use href="#fa-ghost" height="50%" x="0" y="25" />
+                </svg>
+            </div>
+        </section>
+    </article>
+
+    <p class="intro">SVG and its <code>linearGradient</code> and <code>radialGradient</code> elements allow to achieve similar results to those obtained with CSS's <code>linear-gradient()</code> and <code>radial-gradient()</code> functions.</p>
 </main>
 </body>
 </html>

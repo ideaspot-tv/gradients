@@ -44,11 +44,37 @@ h1 {
     flex-wrap: wrap;
     gap: 1em;
     align-content: space-between;
+    justify-content: center;
 
     div {
       width: 200px;
       height: 200px;
       border: 1px solid white;
+      position: relative;
+
+      &.css {
+        &:before {
+          content: "CSS";
+          display: inline-block;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          padding: 0.5em;
+          background-color: #00000055;
+        }
+      }
+
+      &.svg {
+        &:before {
+          content: "SVG";
+          display: inline-block;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          padding: 0.5em;
+          background-color: #00000055;
+        }
+      }
     }
 
     span {
@@ -58,46 +84,3 @@ h1 {
     }
   }
 }
-
-//.history {
-//  display: flex;
-//  flex-direction: row;
-//  flex-wrap: wrap;
-//  column-gap: 1em;
-//  row-gap: 1.5em;
-//  justify-content: center;
-//  width: 100%;
-//
-//  div {
-//    width: 100px;
-//    height: 100px;
-//    border: 1px solid white;
-//    position: relative;
-//
-//    span {
-//      display: inline-block;
-//      font-size: 0.75em;
-//      font-weight: 300;
-//      padding: 0.5em;
-//      background-color: #00000055;
-//      position: absolute;
-//      bottom: 0;
-//      left: 0;
-//    }
-//  }
-//}
-//
-//#current {
-//  width: 300px;
-//  height: 300px;
-//  border: 1px solid white;
-//  margin: 2em auto;
-//  flex-grow: 0;
-//  flex-shrink: 0;
-//}
-//
-//#logo {
-//  width: 300px;
-//  height: 300px;
-//  margin: 2em auto;
-//}
