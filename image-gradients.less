@@ -1,0 +1,86 @@
+@import "https://necolas.github.io/normalize.css/8.0.1/normalize.css";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #092927;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+main {
+  width: 100%;
+  margin: 2em auto;
+  @media (min-width: 400px) {
+    width: 80%;
+  }
+}
+
+p.intro {
+  color: white;
+  font-size: 0.9em;
+  text-align: justify;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 900;
+  font-size: 2.5em;
+}
+
+.challenges {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  section {
+    position: relative;
+    padding-top: 2em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+    align-content: space-between;
+    justify-content: center;
+
+    div {
+      width: 200px;
+      height: 200px;
+      border: 1px solid white;
+      position: relative;
+
+      &.css {
+        &:before {
+          content: "CSS";
+          display: inline-block;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          padding: 0.5em;
+          background-color: #00000055;
+        }
+      }
+
+      &.img {
+        &:before {
+          content: "IMG";
+          display: inline-block;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          padding: 0.5em;
+          background-color: #00000055;
+        }
+      }
+    }
+
+    span {
+      position: absolute;
+      top: 0;
+      font-weight: 600;
+    }
+  }
+}
