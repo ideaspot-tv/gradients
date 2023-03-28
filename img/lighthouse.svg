@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 300 300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <rect x="0" y="0" width="300" height="300" style="fill:white;"/>
+    <g id="LighthouseBody" transform="matrix(0.60274,0,0,1.07236,61.4726,10.3341)">
+        <path d="M182.246,86.29L120.36,86.29L94.231,241.711L215.252,241.711L182.246,86.29Z" style="fill:none;stroke:black;stroke-width:5.59px;"/>
+    </g>
+    <path d="M112.881,102.868L191.214,102.868" style="fill:none;stroke:black;stroke-width:4.86px;"/>
+    <g transform="matrix(1,0,0,1,0,-38.13)">
+        <path d="M112.881,102.868L191.214,102.868" style="fill:none;stroke:black;stroke-width:4.86px;"/>
+    </g>
+    <g transform="matrix(0.00957344,0.486772,-0.999807,0.0196634,225.425,7.76783)">
+        <path d="M193.373,49.414L115.041,49.414L58.649,73.953L112.881,102.868L191.214,102.868" style="fill:none;stroke:black;stroke-width:6.18px;"/>
+    </g>
+    <g transform="matrix(1.02653,0,0,1.11554,-3.97878,-5.73554)">
+        <path d="M300,238.395L300,280.106L0,280.106L0,238.395C4.901,232.869 13.321,221.817 22.502,221.817C31.682,221.817 44.224,238.395 55.085,238.395C65.946,238.395 76.807,221.817 87.668,221.817C98.529,221.817 109.39,238.395 120.252,238.395C131.113,238.395 141.974,221.817 152.835,221.817C163.696,221.817 174.557,238.395 185.418,238.395C196.279,238.395 207.14,221.817 218.001,221.817C228.863,221.817 239.724,238.395 250.585,238.395C261.446,238.395 274.932,221.817 283.168,221.817C291.043,221.817 297.439,232.869 300,238.395Z" style="fill:white;stroke:black;stroke-width:4.53px;"/>
+    </g>
+    <g transform="matrix(1,0,0,1,0,43.6008)">
+        <path d="M0,238.395C4.901,232.869 13.321,221.817 22.502,221.817C31.682,221.817 44.224,238.395 55.085,238.395C65.946,238.395 76.807,221.817 87.668,221.817C98.529,221.817 109.39,238.395 120.252,238.395C131.113,238.395 141.974,221.817 152.835,221.817C163.696,221.817 174.557,238.395 185.418,238.395C196.279,238.395 207.14,221.817 218.001,221.817C228.863,221.817 239.724,238.395 250.585,238.395C261.446,238.395 274.932,221.817 283.168,221.817C291.043,221.817 297.439,232.869 300,238.395" style="fill:none;stroke:black;stroke-width:4.86px;"/>
+    </g>
+</svg>

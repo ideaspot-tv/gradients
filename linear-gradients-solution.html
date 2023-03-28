@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>CSS Linear Gradients Challenge</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+        }
+        main {
+            height: 100vh;
+            background-color: black;
+            display: grid;
+            place-items: center;
+        }
+
+        main div {
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .gradient-challenge {
+            /*
+                Your code goes here!
+                top-left color: #009fff
+                bottom-right color: #ec2f4b
+            */
+            background-image: linear-gradient(to bottom right, #009fff, #ec2f4b);
+        }
+
+    </style>
+</head>
+<body>
+<main class="gradient-challenge">
+    <div>
+        <h1>Gradient Challenge</h1>
+        <p>
+            In this challenge please create a linear gradient using colors <code>#009fff</code> and <code>#ec2f4b</code>.
+            The gradient should start at the top left and end at the bottom right.
+        </p>
+    </div>
+</main>
+</body>
+</html>
