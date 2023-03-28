@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>CSS Linear Gradient Animation</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+        }
+        main {
+            height: 100vh;
+            background-color: black;
+            display: grid;
+            place-items: center;
+        }
+
+        main div {
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .gradient-animation {
+            background-image: linear-gradient(to bottom right, #009fff, #ec2f4b);
+            background-size: 200%;
+            animation: gradient 5s ease-in-out infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<main class="gradient-animation">
+    <div>
+        <h1>Gradient Animation</h1>
+        <p>
+            In this example, we create a linear gradient using colors <code>#009fff</code> and <code>#ec2f4b</code>.
+            The gradient starts at the top left and ends at the bottom right.
+            The fancy part is that we animate the gradient so that it moves from left to right.
+        </p>
+    </div>
+</main>
+</body>
+</html>
